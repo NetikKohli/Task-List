@@ -7,7 +7,7 @@ function TaskAdder(value, isComplete) {
     let task = document.createElement('div')
     task.classList.add('taskContainer')
 
-    let content = document.createElement('input')
+    let content = document.createElement('TEXTAREA')
     content.classList.add('tasks')
 
     content.type = 'text'
@@ -33,6 +33,12 @@ function TaskAdder(value, isComplete) {
     content.addEventListener('change',()=>{
         saveInLocalStorage()
     })
+    content.addEventListener("keypress", function(event) {
+         if (event.key === "Enter") {
+          event.preventDefault();
+          saveInLocalStorage()
+        }
+      });
     comp.addEventListener('click', () => {
         comp.classList.toggle('checked')
         comp.src = (comp.className.includes('checked')) ? 'checked.svg' : 'complete.svg';
@@ -76,6 +82,12 @@ addTask.children[1].addEventListener('click', () => {
     addTask.children[0].value = ''
 
 }, false)
-
+document.querySelector('#taskInput').addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+     event.preventDefault();
+     TaskAdder(addTask.children[0].value, false)
+addTask.children[0].value = ''
+   }
+ });
 
 

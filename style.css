@@ -5,16 +5,14 @@
 }
 
 body{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-
     align-items: center;
 }
 
 .main{
-   height: auto;
    min-height: 40%;
    min-width: 50%;
    display: flex;
@@ -23,7 +21,6 @@ body{
    max-width: 100em;
    border-radius: 25px;
    background-color: #0e20ec;
-
 }
 
 .taskAdd{
@@ -38,16 +35,21 @@ body{
 
 #add{
     width: 3rem;
+    margin: 1em;
 }
 #taskInput{
-     margin: 2em;
+     margin: 1em 0em 1em 1em;
+     resize: none;
+     height: 90%;
+     width: 100%;
+     text-align: center;
      font-size: 1em;
      outline: none;
      border: none;
 }
 
 .taskContainer{
-    width: 100%;
+    width: auto;
     height: 4em;
     display: flex;
     justify-content: space-around;
@@ -59,14 +61,15 @@ body{
 
 .imageContainer{
     display: flex;
-    
+    margin: 1em;
     justify-content: space-around;
     min-width: 20%;
    
 }
 .tasks{
-    width: 16rem;
+    width: 100%;
     height: 3rem;
+    resize: none;
     margin-left: 1rem;
     outline: none;
     border: none;
