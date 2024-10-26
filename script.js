@@ -1,6 +1,7 @@
 let addTask = document.querySelector('.taskAdd')
 let main = document.querySelector('.main')
 function TaskAdder(value, isComplete) {
+    value=value.trim();
     if (value === "")
         return;
     let task = document.createElement('div')
